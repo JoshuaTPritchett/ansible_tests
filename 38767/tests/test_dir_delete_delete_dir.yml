@@ -1,0 +1,29 @@
+---
+- name: Test chdir delete
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  become: true
+  become_method: sudo
+  become_user: root
+
+  vars:
+    DEST_PATH: /tmp/test_dir
+
+  tasks:
+   - name: create dest folder
+     file:
+       path: "{{ DEST_PATH }}"
+       state: directory
+       mode: 0755
+
+   - name: copy script
+     copy:
+       src: files/delete_cwd.sh
+       dest: "{{ DEST_PATH }}/delete_cwd.sh"
+       mode: 0755
+
+   - name: run script - which deletes the cwd and thus fails
+     shell: ./delete_cwd.sh
+     args:
+      chdir: "{{ DEST_PATH }}"

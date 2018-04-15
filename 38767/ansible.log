@@ -1,0 +1,128 @@
+2018-04-14 17:36:39,828 p=10675 u=jprime |  PLAY [localhost] **********************************************************************
+2018-04-14 17:36:39,837 p=10675 u=jprime |  TASK [create dest folder] *************************************************************
+2018-04-14 17:36:41,361 p=10675 u=jprime |  changed: [localhost]
+2018-04-14 17:36:41,365 p=10675 u=jprime |  TASK [copy script] ********************************************************************
+2018-04-14 17:36:42,011 p=10675 u=jprime |  changed: [localhost]
+2018-04-14 17:36:42,015 p=10675 u=jprime |  TASK [run script - which deletes the cwd and thus fails] ******************************
+2018-04-14 17:36:42,404 p=10675 u=jprime |  fatal: [localhost]: FAILED! => {"changed": false, "module_stderr": "Shared connection to localhost closed.\r\n", "module_stdout": "Traceback (most recent call last):\r\n  File \"/tmp/ansible_ilVvex/ansible_module_command.py\", line 261, in <module>\r\n    main()\r\n  File \"/tmp/ansible_ilVvex/ansible_module_command.py\", line 238, in main\r\n    rc, out, err = module.run_command(args, executable=executable, use_unsafe_shell=shell, encoding=None, data=stdin)\r\n  File \"/tmp/ansible_ilVvex/ansible_modlib.zip/ansible/module_utils/basic.py\", line 2867, in run_command\r\nOSError: [Errno 2] No such file or directory: '/tmp/test_dir'\r\n", "msg": "MODULE FAILURE", "rc": 1}
+2018-04-14 17:36:42,428 p=10675 u=jprime |  	to retry, use: --limit @/home/jprime/Desktop/ansible_test/ansible-shell-issues/site.retry
+
+2018-04-14 17:36:42,436 p=10675 u=jprime |  PLAY RECAP ****************************************************************************
+2018-04-14 17:36:42,436 p=10675 u=jprime |  localhost                  : ok=2    changed=2    unreachable=0    failed=1   
+2018-04-14 17:50:56,248 p=11492 u=jprime |  PLAY [localhost] ***********************************************************************************************************************************************************************
+2018-04-14 17:50:56,277 p=11492 u=jprime |  TASK [create dest folder] **************************************************************************************************************************************************************
+2018-04-14 17:50:57,902 p=11492 u=jprime |  changed: [localhost]
+2018-04-14 17:50:57,907 p=11492 u=jprime |  TASK [copy script] *********************************************************************************************************************************************************************
+2018-04-14 17:50:58,617 p=11492 u=jprime |  changed: [localhost]
+2018-04-14 17:50:58,623 p=11492 u=jprime |  TASK [run script - which deletes the cwd and thus fails] *******************************************************************************************************************************
+2018-04-14 17:50:59,057 p=11492 u=jprime |  fatal: [localhost]: FAILED! => {"changed": false, "module_stderr": "Shared connection to localhost closed.\r\n", "module_stdout": "Traceback (most recent call last):\r\n  File \"/tmp/ansible_HGGRJo/ansible_module_command.py\", line 255, in <module>\r\n    main()\r\n  File \"/tmp/ansible_HGGRJo/ansible_module_command.py\", line 232, in main\r\n    rc, out, err = module.run_command(args, executable=executable, use_unsafe_shell=shell, encoding=None, data=stdin)\r\n  File \"/tmp/ansible_HGGRJo/ansible_modlib.zip/ansible/module_utils/basic.py\", line 2868, in run_command\r\nNameError: global name 'chdir' is not defined\r\n", "msg": "MODULE FAILURE", "rc": 1}
+2018-04-14 17:50:59,059 p=11492 u=jprime |  	to retry, use: --limit @/home/jprime/Desktop/ansible_test/ansible-shell-issues/site.retry
+
+2018-04-14 17:50:59,060 p=11492 u=jprime |  PLAY RECAP *****************************************************************************************************************************************************************************
+2018-04-14 17:50:59,060 p=11492 u=jprime |  localhost                  : ok=2    changed=2    unreachable=0    failed=1   
+2018-04-14 17:52:27,507 p=11804 u=jprime |  PLAY [localhost] ***********************************************************************************************************************************************************************
+2018-04-14 17:52:27,517 p=11804 u=jprime |  TASK [create dest folder] **************************************************************************************************************************************************************
+2018-04-14 17:52:27,857 p=11804 u=jprime |  changed: [localhost]
+2018-04-14 17:52:27,862 p=11804 u=jprime |  TASK [copy script] *********************************************************************************************************************************************************************
+2018-04-14 17:52:28,496 p=11804 u=jprime |  changed: [localhost]
+2018-04-14 17:52:28,500 p=11804 u=jprime |  TASK [run script - which deletes the cwd and thus fails] *******************************************************************************************************************************
+2018-04-14 17:52:28,813 p=11804 u=jprime |  fatal: [localhost]: FAILED! => {"changed": false, "msg": "The /tmp/test_dir directory does not exist"}
+2018-04-14 17:52:28,821 p=11804 u=jprime |  	to retry, use: --limit @/home/jprime/Desktop/ansible_test/ansible-shell-issues/site.retry
+
+2018-04-14 17:52:28,822 p=11804 u=jprime |  PLAY RECAP *****************************************************************************************************************************************************************************
+2018-04-14 17:52:28,822 p=11804 u=jprime |  localhost                  : ok=2    changed=2    unreachable=0    failed=1   
+2018-04-15 09:51:41,350 p=6930 u=jprime |  PLAY [Test chdir Args] *********************************************************
+2018-04-15 09:51:41,366 p=6930 u=jprime |  TASK [create dest folder] ******************************************************
+2018-04-15 09:51:41,633 p=6930 u=jprime |  ok: [localhost]
+2018-04-15 09:51:41,639 p=6930 u=jprime |  TASK [copy script] *************************************************************
+2018-04-15 09:51:42,069 p=6930 u=jprime |  changed: [localhost]
+2018-04-15 09:51:42,075 p=6930 u=jprime |  TASK [run script - which deletes the cwd and thus fails] ***********************
+2018-04-15 09:51:42,355 p=6930 u=jprime |  fatal: [localhost]: FAILED! => {"changed": false, "msg": "The /tmp/test_dir directory does not exist"}
+2018-04-15 09:51:42,358 p=6930 u=jprime |  	to retry, use: --limit @/home/jprime/Desktop/ansible_test/ansible-shell-issues/tests/test.retry
+
+2018-04-15 09:51:42,358 p=6930 u=jprime |  PLAY RECAP *********************************************************************
+2018-04-15 09:51:42,358 p=6930 u=jprime |  localhost                  : ok=2    changed=1    unreachable=0    failed=1   
+2018-04-15 09:53:43,115 p=7093 u=jprime |  PLAY [Test not dir] ************************************************************
+2018-04-15 09:53:43,137 p=7093 u=jprime |  TASK [create dest folder] ******************************************************
+2018-04-15 09:53:43,420 p=7093 u=jprime |  ok: [localhost]
+2018-04-15 09:53:43,429 p=7093 u=jprime |  TASK [run script - which deletes the cwd and thus fails] ***********************
+2018-04-15 09:53:43,705 p=7093 u=jprime |  fatal: [localhost]: FAILED! => {"changed": false, "msg": "The /tmp/test_dir directory does not exist"}
+2018-04-15 09:53:43,708 p=7093 u=jprime |  	to retry, use: --limit @/home/jprime/Desktop/ansible_test/ansible-shell-issues/tests/test_is_not_dir.retry
+
+2018-04-15 09:53:43,708 p=7093 u=jprime |  PLAY RECAP *********************************************************************
+2018-04-15 09:53:43,708 p=7093 u=jprime |  localhost                  : ok=1    changed=0    unreachable=0    failed=1   
+2018-04-15 09:59:13,879 p=7309 u=jprime |  ERROR! the playbook: tests/test_is_not_dir. could not be found
+2018-04-15 09:59:25,510 p=7318 u=jprime |  PLAY [Test not dir] ************************************************************
+2018-04-15 09:59:25,523 p=7318 u=jprime |  TASK [create dest folder] ******************************************************
+2018-04-15 09:59:25,783 p=7318 u=jprime |  changed: [localhost]
+2018-04-15 09:59:25,789 p=7318 u=jprime |  TASK [run script - which deletes the cwd and thus fails] ***********************
+2018-04-15 09:59:26,059 p=7318 u=jprime |  fatal: [localhost]: FAILED! => {"changed": false, "msg": "The file /tmp/test_dir is not a directory"}
+2018-04-15 09:59:26,062 p=7318 u=jprime |  PLAY RECAP *********************************************************************
+2018-04-15 09:59:26,062 p=7318 u=jprime |  localhost                  : ok=1    changed=1    unreachable=0    failed=1   
+2018-04-15 10:00:51,893 p=7413 u=jprime |  ERROR! Syntax Error while loading YAML.
+  expected <block end>, but found '<block mapping start>'
+
+The error appears to have been in '/home/jprime/Desktop/ansible_test/ansible-shell-issues/tests/test_does_not_exist.yml': line 15, column 6, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+    - name: run script - which deletes the cwd and thus fails
+     shell: id
+     ^ here
+
+2018-04-15 10:01:13,131 p=7460 u=jprime |  PLAY [Test not dir] ************************************************************
+2018-04-15 10:01:13,159 p=7460 u=jprime |  TASK [run script - which deletes the cwd and thus fails] ***********************
+2018-04-15 10:01:13,491 p=7460 u=jprime |  fatal: [localhost]: FAILED! => {"changed": false, "msg": "The file /tmp/test_dir is not a directory"}
+2018-04-15 10:01:13,494 p=7460 u=jprime |  PLAY RECAP *********************************************************************
+2018-04-15 10:01:13,494 p=7460 u=jprime |  localhost                  : ok=0    changed=0    unreachable=0    failed=1   
+2018-04-15 10:09:10,773 p=8110 u=jprime |  PLAY [Test chdir delete] *******************************************************
+2018-04-15 10:09:10,820 p=8110 u=jprime |  TASK [create dest folder] ******************************************************
+2018-04-15 10:09:11,109 p=8110 u=jprime |  changed: [localhost]
+2018-04-15 10:09:11,114 p=8110 u=jprime |  TASK [copy script] *************************************************************
+2018-04-15 10:09:11,567 p=8110 u=jprime |  changed: [localhost]
+2018-04-15 10:09:11,573 p=8110 u=jprime |  TASK [run script - which deletes the cwd and thus fails] ***********************
+2018-04-15 10:09:11,856 p=8110 u=jprime |  fatal: [localhost]: FAILED! => {"changed": false, "msg": "The directory /tmp/test_dir does not exist"}
+2018-04-15 10:09:11,859 p=8110 u=jprime |  PLAY RECAP *********************************************************************
+2018-04-15 10:09:11,859 p=8110 u=jprime |  localhost                  : ok=2    changed=2    unreachable=0    failed=1   
+2018-04-15 10:13:31,513 p=8380 u=jprime |  PLAY [Test chdir delete] *******************************************************
+2018-04-15 10:13:31,557 p=8380 u=jprime |  TASK [create dest folder] ******************************************************
+2018-04-15 10:13:31,856 p=8380 u=jprime |  changed: [localhost]
+2018-04-15 10:13:31,864 p=8380 u=jprime |  TASK [copy script] *************************************************************
+2018-04-15 10:13:32,329 p=8380 u=jprime |  changed: [localhost]
+2018-04-15 10:13:32,332 p=8380 u=jprime |  TASK [run script - which deletes the cwd and thus fails] ***********************
+2018-04-15 10:13:32,610 p=8380 u=jprime |  fatal: [localhost]: FAILED! => {"changed": true, "cmd": "./recreate_dir_cwd.sh", "delta": "0:00:00.002019", "end": "2018-04-15 10:13:32.591858", "msg": "non-zero return code", "rc": 127, "start": "2018-04-15 10:13:32.589839", "stderr": "/bin/sh: 1: ./recreate_dir_cwd.sh: not found", "stderr_lines": ["/bin/sh: 1: ./recreate_dir_cwd.sh: not found"], "stdout": "", "stdout_lines": []}
+2018-04-15 10:13:32,611 p=8380 u=jprime |  PLAY RECAP *********************************************************************
+2018-04-15 10:13:32,611 p=8380 u=jprime |  localhost                  : ok=2    changed=2    unreachable=0    failed=1   
+2018-04-15 10:14:18,503 p=8512 u=jprime |  PLAY [Test chdir delete] *******************************************************
+2018-04-15 10:14:18,552 p=8512 u=jprime |  TASK [create dest folder] ******************************************************
+2018-04-15 10:14:18,851 p=8512 u=jprime |  ok: [localhost]
+2018-04-15 10:14:18,859 p=8512 u=jprime |  TASK [copy script] *************************************************************
+2018-04-15 10:14:19,333 p=8512 u=jprime |  changed: [localhost]
+2018-04-15 10:14:19,338 p=8512 u=jprime |  TASK [run script - which deletes the cwd and thus fails] ***********************
+2018-04-15 10:14:19,619 p=8512 u=jprime |  changed: [localhost]
+2018-04-15 10:14:19,621 p=8512 u=jprime |  PLAY RECAP *********************************************************************
+2018-04-15 10:14:19,622 p=8512 u=jprime |  localhost                  : ok=3    changed=2    unreachable=0    failed=0   
+2018-04-15 10:16:19,428 p=8719 u=jprime |  PLAY [Test chdir delete] *******************************************************
+2018-04-15 10:16:19,451 p=8719 u=jprime |  TASK [create dest folder] ******************************************************
+2018-04-15 10:16:19,725 p=8719 u=jprime |  ok: [localhost]
+2018-04-15 10:16:19,733 p=8719 u=jprime |  TASK [copy script] *************************************************************
+2018-04-15 10:16:20,154 p=8719 u=jprime |  changed: [localhost]
+2018-04-15 10:16:20,158 p=8719 u=jprime |  TASK [run script - which deletes the cwd and thus fails] ***********************
+2018-04-15 10:16:20,436 p=8719 u=jprime |  fatal: [localhost]: FAILED! => {"changed": false, "msg": "The file /tmp/test_dir is not a directory"}
+2018-04-15 10:16:20,438 p=8719 u=jprime |  PLAY RECAP *********************************************************************
+2018-04-15 10:16:20,438 p=8719 u=jprime |  localhost                  : ok=2    changed=1    unreachable=0    failed=1   
+2018-04-15 10:19:38,192 p=8993 u=jprime |  PLAY [Test chdir delete] *******************************************************
+2018-04-15 10:19:38,215 p=8993 u=jprime |  TASK [create dest folder] ******************************************************
+2018-04-15 10:19:38,496 p=8993 u=jprime |  fatal: [localhost]: FAILED! => {"changed": false, "gid": 0, "group": "root", "mode": "0644", "msg": "/tmp/test_dir already exists as a file", "owner": "root", "path": "/tmp/test_dir", "size": 0, "state": "file", "uid": 0}
+2018-04-15 10:19:38,497 p=8993 u=jprime |  PLAY RECAP *********************************************************************
+2018-04-15 10:19:38,497 p=8993 u=jprime |  localhost                  : ok=0    changed=0    unreachable=0    failed=1   
+2018-04-15 10:19:57,087 p=9043 u=jprime |  PLAY [Test chdir delete] *******************************************************
+2018-04-15 10:19:57,108 p=9043 u=jprime |  TASK [create dest folder] ******************************************************
+2018-04-15 10:19:57,386 p=9043 u=jprime |  changed: [localhost]
+2018-04-15 10:19:57,394 p=9043 u=jprime |  TASK [copy script] *************************************************************
+2018-04-15 10:19:57,825 p=9043 u=jprime |  changed: [localhost]
+2018-04-15 10:19:57,830 p=9043 u=jprime |  TASK [run script - which deletes the cwd and thus fails] ***********************
+2018-04-15 10:19:58,122 p=9043 u=jprime |  fatal: [localhost]: FAILED! => {"changed": false, "msg": "The directory /tmp/test_dir does not exist"}
+2018-04-15 10:19:58,123 p=9043 u=jprime |  PLAY RECAP *********************************************************************
+2018-04-15 10:19:58,123 p=9043 u=jprime |  localhost                  : ok=2    changed=2    unreachable=0    failed=1   

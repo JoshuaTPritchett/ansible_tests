@@ -1,0 +1,24 @@
+---
+- name: Test not dir
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  become: true
+  become_method: sudo
+  become_user: root
+
+  vars:
+    DEST_PATH: /tmp/test_dir
+
+  tasks:
+   - name: create dest folder
+     file:
+       path: "{{ DEST_PATH }}"
+       state: touch
+       mode: 0666
+
+   - name: run script - which deletes the cwd and thus fails
+     shell: id
+     args:
+      chdir: "{{ DEST_PATH }}"
+
